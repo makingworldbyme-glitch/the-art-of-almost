@@ -1,0 +1,22 @@
+{
+  "name": "the-art-of-almost",
+  "version": "1.0.0",
+  "description": "An Ongoing Study of Nothing in Particular — Conceptual Portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "npx -y serve . -l 3000",
+    "start": "npx -y serve .",
+    "build": "node --check js/main.js js/config.js",
+    "test": "node --check js/main.js js/config.js"
+  },
+  "keywords": [
+    "portfolio",
+    "minimalism",
+    "swiss-design",
+    "dark-editorial",
+    "anti-portfolio"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true
+}

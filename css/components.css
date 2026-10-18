@@ -1,0 +1,424 @@
+/* ==========================================================================
+   COMPONENTS SPECIFICATION
+   The Art of Almost — Swiss Minimalism x Dark Editorial
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Scroll Prompt Indicator (Hero)
+   -------------------------------------------------------------------------- */
+.scroll-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-top: var(--space-2xl);
+  text-decoration: none;
+  min-height: 44px;
+  line-height: 44px;
+  transition: color var(--duration-hover) var(--ease-editorial);
+}
+
+.scroll-indicator:hover {
+  color: var(--text-primary);
+}
+
+.scroll-indicator-arrow {
+  display: inline-block;
+  transition: transform var(--duration-hover) var(--ease-editorial);
+}
+
+.scroll-indicator:hover .scroll-indicator-arrow {
+  transform: translateY(3px);
+}
+
+/* --------------------------------------------------------------------------
+   2. Editorial Sub-Sections & Origin Block
+   -------------------------------------------------------------------------- */
+.editorial-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-subtle);
+  border: none;
+  margin-block: var(--space-2xl);
+}
+
+.origin-block {
+  padding-top: var(--space-xs);
+}
+
+.origin-kicker {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.origin-statement {
+  font-size: var(--text-lead);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  line-height: var(--lh-heading);
+}
+
+.owner-highlight {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.origin-bio {
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  line-height: var(--lh-body);
+}
+
+.origin-action {
+  margin-top: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   3. Trajectory / Experience Timeline
+   -------------------------------------------------------------------------- */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.timeline-item {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.timeline-phase {
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  font-weight: 600;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.timeline-status {
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background-color: rgba(241, 239, 232, 0.04);
+  padding: 2px 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+}
+
+.timeline-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-body);
+  max-width: 52ch;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Selected Works / Framed Curatorial Archive
+   -------------------------------------------------------------------------- */
+.archive-frame {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: var(--space-lg) var(--space-md);
+  position: relative;
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .archive-frame {
+    padding: var(--space-2xl) var(--space-2xl);
+  }
+}
+
+.archive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.archive-meta {
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  font-weight: 600;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.archive-content {
+  padding-block: clamp(var(--space-xl), 6vw, var(--space-3xl));
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.archive-empty-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: var(--ls-heading);
+  margin-bottom: var(--space-sm);
+  text-wrap: balance;
+}
+
+.archive-empty-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  max-width: 44ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+  line-height: var(--lh-body);
+}
+
+.easter-egg-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.easter-egg-response {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-left: 2px solid var(--text-secondary);
+  background-color: rgba(241, 239, 232, 0.02);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--text-lead);
+  color: var(--text-primary);
+  max-width: 44ch;
+  text-align: left;
+  animation: fadeInEditorial var(--duration-hover) var(--ease-editorial) forwards;
+}
+
+@keyframes fadeInEditorial {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.easter-egg-meta {
+  display: block;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: var(--text-meta);
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-top: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   5. Capabilities Tripartite Matrix
+   -------------------------------------------------------------------------- */
+.capabilities-matrix {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .capabilities-matrix {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.capability-node {
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-secondary);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: border-color var(--duration-hover) var(--ease-editorial);
+}
+
+.capability-node:hover {
+  border-color: var(--text-tertiary);
+}
+
+.capability-kicker {
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  font-weight: 600;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.capability-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: var(--lh-heading);
+}
+
+.capability-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  line-height: var(--lh-body);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Contact Callout
+   -------------------------------------------------------------------------- */
+.contact-callout {
+  margin-top: var(--space-xl);
+}
+
+.contact-action-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: var(--space-xs);
+  min-height: 48px;
+  line-height: 1.2;
+  transition: color var(--duration-hover) var(--ease-editorial), border-color var(--duration-hover) var(--ease-editorial);
+}
+
+.contact-action-link:hover {
+  color: var(--accent-hover);
+  border-color: var(--text-primary);
+}
+
+.contact-action-link .arrow-glyph {
+  font-family: var(--font-sans);
+  font-size: 0.65em;
+  display: inline-block;
+  transition: transform var(--duration-hover) var(--ease-editorial);
+}
+
+.contact-action-link:hover .arrow-glyph {
+  transform: translate(3px, -3px);
+}
+
+.contact-direct-info {
+  margin-top: var(--space-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+}
+
+.contact-direct-info code {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  padding: 6px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  font-size: 0.9em;
+  user-select: all;
+  display: inline-block;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  max-width: 100%;
+  cursor: pointer;
+  transition: border-color var(--duration-hover) var(--ease-editorial),
+              background-color var(--duration-hover) var(--ease-editorial);
+}
+
+.contact-direct-info code:hover {
+  border-color: var(--text-secondary);
+  background-color: rgba(241, 239, 232, 0.04);
+}
+
+.copy-notice {
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-left: var(--space-xs);
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   7. Ghost Action Button (Easter Egg & Minimal CTAs)
+   -------------------------------------------------------------------------- */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 44px;
+  transition: color var(--duration-hover) var(--ease-editorial),
+              border-color var(--duration-hover) var(--ease-editorial),
+              background-color var(--duration-hover) var(--ease-editorial);
+}
+
+.btn-ghost:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+  background-color: rgba(241, 239, 232, 0.04);
+}

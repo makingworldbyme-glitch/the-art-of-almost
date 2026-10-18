@@ -1,0 +1,84 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM PROPERTIES
+   The Art of Almost — Swiss Minimalism x Dark Editorial
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. Color Palette (Dark Editorial)
+     ------------------------------------------------------------------------ */
+  --bg-primary: #111110;           /* Obsidian Warm Black (Canvas Base) */
+  --bg-secondary: #1A1A18;         /* Elevated Surface */
+  --bg-surface-light: #F1EFE8;     /* Inverted Alabaster Block (Contrast Surface) */
+
+  --text-primary: #F1EFE8;         /* Warm Alabaster (Headings, Major Titles, 15.2:1 AAA) */
+  --text-secondary: #A4A29B;       /* Muted Warm Stone (Body, Lead-ins, 8.7:1 AAA) */
+  --text-tertiary: #807E78;        /* Refined Warm Stone (Micro Indices & Placards, 4.7:1 AA) */
+  --text-inverse: #171715;         /* Deep Carbon (Text on Light Surfaces, 14.8:1 AAA) */
+
+  --border-subtle: #383833;        /* Hairline Grid Dividers (1px decorative) */
+  --border-focus: #F1EFE8;         /* High-visibility Keyboard Focus Ring (15.2:1 AAA) */
+  --accent-hover: #FFFFFF;         /* Peak Luminance Highlight on Hover */
+
+  /* ------------------------------------------------------------------------
+     2. Typography Families
+     ------------------------------------------------------------------------ */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* ------------------------------------------------------------------------
+     3. Fluid Typographic Scale (CSS clamp)
+     ------------------------------------------------------------------------ */
+  --text-display: clamp(2.35rem, 6.5vw, 6.5rem);       /* Hero Monolith */
+  --text-h1: clamp(1.85rem, 4.2vw, 3.875rem);          /* Major Section Titles */
+  --text-h2: clamp(1.35rem, 2.5vw, 2.25rem);           /* Sub-headings */
+  --text-lead: clamp(1.0625rem, 1.5vw, 1.375rem);      /* Editorial Lead Statements */
+  --text-body: clamp(0.9375rem, 1vw, 1.0625rem);     /* Standard Narrative Body */
+  --text-small: 0.875rem;                            /* Annotations & Secondary Copy */
+  --text-meta: 0.6875rem;                            /* Micro Indices, Kickers, Placards */
+
+  /* Line Heights */
+  --lh-tight: 1.04;
+  --lh-title: 1.15;
+  --lh-heading: 1.25;
+  --lh-body: 1.65;
+  --lh-relaxed: 1.8;
+
+  /* Letter Spacing */
+  --ls-display: -0.025em;
+  --ls-heading: -0.015em;
+  --ls-body: 0em;
+  --ls-meta: 0.14em;
+
+  /* ------------------------------------------------------------------------
+     4. Spacing Scale & Rhythm (8px baseline)
+     ------------------------------------------------------------------------ */
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs: 12px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: clamp(80px, 12vh, 160px);       /* Standard Section Gap */
+  --space-monolith: clamp(120px, 18vh, 240px); /* Hero & Major Transition Gap */
+
+  /* ------------------------------------------------------------------------
+     5. Container & Layout Bounds
+     ------------------------------------------------------------------------ */
+  --container-max-width: 1240px;
+  --page-padding-inline: clamp(1.25rem, 4.5vw, 5rem);
+
+  /* ------------------------------------------------------------------------
+     6. Motion & Editorial Transitions
+     ------------------------------------------------------------------------ */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --duration-instant: 150ms;
+  --duration-hover: 250ms;
+  --duration-reveal: 600ms;
+  --duration-page: 900ms;
+}

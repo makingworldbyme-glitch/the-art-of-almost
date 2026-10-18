@@ -1,0 +1,162 @@
+/* ==========================================================================
+   TYPOGRAPHY SPECIFICATION & HIERARCHY
+   The Art of Almost — Swiss Minimalism x Dark Editorial
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Selection Style
+   -------------------------------------------------------------------------- */
+::selection {
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+}
+
+/* --------------------------------------------------------------------------
+   2. Base Document Typography
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   3. Heading Styles
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-h1);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-heading);
+}
+
+h2 {
+  font-size: var(--text-h2);
+  line-height: var(--lh-heading);
+}
+
+/* --------------------------------------------------------------------------
+   4. Paragraphs & Editorial Text
+   -------------------------------------------------------------------------- */
+p {
+  margin-bottom: var(--space-md);
+  text-wrap: pretty;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero Specific Editorial Typography
+   -------------------------------------------------------------------------- */
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--text-primary);
+  text-wrap: balance;
+  max-width: 14ch;
+  margin-block: var(--space-md);
+}
+
+.hero-lead {
+  max-width: 50ch;
+  margin-bottom: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   6. Typographic Role Classes
+   -------------------------------------------------------------------------- */
+.font-display {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--text-primary);
+}
+
+.font-lead {
+  font-family: var(--font-serif);
+  font-size: var(--text-lead);
+  font-style: italic;
+  font-weight: 400;
+  line-height: var(--lh-relaxed);
+  color: var(--text-primary);
+}
+
+.font-meta {
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   7. Links & Interactive Typography
+   -------------------------------------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-hover) var(--ease-editorial);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.text-link-inline {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+  transition: color var(--duration-hover) var(--ease-editorial);
+}
+
+.text-link-inline:hover {
+  color: var(--accent-hover);
+}
+
+/* Accessible focus ring across all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 4px;
+}
+
+/* Measure restraint for reading comfort */
+.measure-narrow {
+  max-width: 44ch;
+}
+
+.measure-reading {
+  max-width: 52ch;
+}

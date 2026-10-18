@@ -1,0 +1,404 @@
+/* ==========================================================================
+   LAYOUT PRIMITIVES & RESPONSIVE GRID
+   The Art of Almost — Swiss Minimalism x Dark Editorial
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Accessibility Skip Link
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-md);
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+  padding: var(--space-xs) var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 500;
+  text-decoration: none;
+  z-index: 1000;
+  transition: top var(--duration-instant) var(--ease-editorial);
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   2. Main Container
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-padding-inline);
+}
+
+/* --------------------------------------------------------------------------
+   3. Section Primitives & Horizontal Rules
+   -------------------------------------------------------------------------- */
+.section {
+  position: relative;
+  padding-block: var(--space-4xl);
+}
+
+.section--hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--space-monolith) var(--space-3xl);
+}
+
+.hairline-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-subtle);
+  border: none;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Asymmetric Swiss Grid Primitives
+   -------------------------------------------------------------------------- */
+.grid-swiss {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .grid-swiss {
+    grid-template-columns: minmax(180px, 1fr) minmax(0, 2.5fr);
+    gap: var(--space-3xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-swiss {
+    grid-template-columns: minmax(220px, 3fr) minmax(0, 9fr);
+    gap: var(--space-4xl);
+  }
+
+  .grid-col-sidebar {
+    position: sticky;
+    top: calc(64px + var(--space-xl));
+    align-self: start;
+  }
+}
+
+.grid-col-sidebar {
+  position: relative;
+}
+
+.grid-col-content {
+  position: relative;
+}
+
+.section-heading {
+  margin-top: var(--space-xs);
+  font-size: var(--text-h1);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-heading);
+}
+
+.content-lead-title {
+  font-size: var(--text-h2);
+  line-height: var(--lh-heading);
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.body-text {
+  color: var(--text-secondary);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+}
+
+/* --------------------------------------------------------------------------
+   5. Site Header & Responsive Navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(17, 17, 16, 0.94);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: relative;
+}
+
+.nav-wordmark {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  transition: color var(--duration-hover) var(--ease-editorial);
+}
+
+.nav-wordmark:hover {
+  color: var(--accent-hover);
+}
+
+/* Nav toggle button: hidden on desktop, active on mobile */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 6px 14px;
+  min-height: 44px;
+  min-width: 44px;
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--duration-hover) var(--ease-editorial),
+              background-color var(--duration-hover) var(--ease-editorial);
+}
+
+.nav-toggle:hover {
+  border-color: var(--text-secondary);
+  background-color: rgba(241, 239, 232, 0.04);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-index {
+  display: none;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  letter-spacing: var(--ls-meta);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: 4px;
+  position: relative;
+  transition: color var(--duration-hover) var(--ease-editorial);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 4px;
+  right: 4px;
+  height: 1px;
+  background-color: var(--text-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-hover) var(--ease-editorial);
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--accent-hover);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 767px) {
+  .nav-wrapper {
+    height: 56px;
+    position: static;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* When JS is ready and mobile menu is implemented: */
+  .js-nav-ready .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(17, 17, 16, 0.98);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: var(--space-md) var(--page-padding-inline);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .js-nav-ready .nav-links.is-open {
+    display: flex;
+    animation: fadeInEditorial 200ms var(--ease-editorial) forwards;
+  }
+
+  .js-nav-ready .nav-link {
+    font-family: var(--font-serif);
+    font-size: var(--text-h2);
+    font-style: italic;
+    color: var(--text-primary);
+    min-height: 48px;
+    padding-block: var(--space-xs);
+    border-bottom: 1px solid rgba(56, 56, 51, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .js-nav-ready .nav-link::after {
+    display: none;
+  }
+
+  .js-nav-ready .nav-index {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: var(--text-meta);
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-meta);
+    order: 2;
+  }
+
+  /* Fallback if JS fails: horizontal smooth touch-scroll */
+  :not(.js-nav-ready) .nav-links {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: var(--space-sm);
+  }
+
+  :not(.js-nav-ready) .nav-toggle {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Site Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-block: var(--space-3xl);
+  background-color: var(--bg-primary);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.footer-brand {
+  color: var(--text-primary);
+  margin-bottom: var(--space-3xs);
+  font-weight: 600;
+}
+
+.footer-credit {
+  color: var(--text-secondary);
+}
+
+.footer-copy {
+  margin-bottom: var(--space-xs);
+  color: var(--text-tertiary);
+}
+
+.footer-top-link {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  line-height: 44px;
+  transition: color var(--duration-hover) var(--ease-editorial);
+}
+
+.footer-top-link .top-arrow {
+  display: inline-block;
+  transition: transform var(--duration-hover) var(--ease-editorial);
+}
+
+.footer-top-link:hover {
+  color: var(--accent-hover);
+}
+
+.footer-top-link:hover .top-arrow {
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   7. Restrained Scroll Reveal Transitions (Progressive Enhancement)
+   -------------------------------------------------------------------------- */
+/* Baseline: completely visible if JS is inactive */
+.reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+}
+
+/* Only when JS initializes reveal observer */
+.js-reveal-active .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--duration-reveal) var(--ease-editorial),
+              transform var(--duration-reveal) var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+.js-reveal-active .reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal-active .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
