@@ -26,6 +26,24 @@
   <!-- Design System & Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
+  <!-- Progressive Enhancement: No-JS Fallback for Navigation -->
+  <noscript>
+    <style>
+      .nav-toggle { display: none !important; }
+      .nav-links {
+        display: flex !important;
+        position: static !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-height: none !important;
+        gap: var(--space-sm) !important;
+        flex-direction: row !important;
+      }
+    </style>
+  </noscript>
+
   <!-- Immediate Scroll & Hash Normalization (Prevents anchor jump on page refresh) -->
   <script>
     if ('scrollRestoration' in history) {

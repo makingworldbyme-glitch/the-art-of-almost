@@ -56,12 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMobileMenu = () => {
       primaryNav.classList.remove('is-open');
       navToggleBtn.setAttribute('aria-expanded', 'false');
+      navToggleBtn.setAttribute('aria-label', 'Toggle navigation menu');
       if (navToggleText) navToggleText.textContent = 'Menu';
     };
 
     const openMobileMenu = () => {
       primaryNav.classList.add('is-open');
       navToggleBtn.setAttribute('aria-expanded', 'true');
+      navToggleBtn.setAttribute('aria-label', 'Close navigation menu');
       if (navToggleText) navToggleText.textContent = 'Close';
     };
 
@@ -91,12 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close on outside click
-    document.addEventListener('click', (e) => {
+    // Close on outside click or tap
+    const handleOutsideDismiss = (e) => {
       if (primaryNav.classList.contains('is-open') && !primaryNav.contains(e.target) && !navToggleBtn.contains(e.target)) {
         closeMobileMenu();
       }
-    });
+    };
+    document.addEventListener('click', handleOutsideDismiss);
+    document.addEventListener('touchend', handleOutsideDismiss, { passive: true });
+
+    // Reset mobile menu if window resizes to desktop width
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && primaryNav.classList.contains('is-open')) {
+        closeMobileMenu();
+      }
+    }, { passive: true });
   }
 
   // 4. Smooth Navigation & Header Offset Coordination
